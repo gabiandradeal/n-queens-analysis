@@ -5,7 +5,7 @@ package com.nqueens.core;
  * coletadas durante a execução de cada algoritmo.
  *
  * @author georis
- * @version 1.0
+ * @version 1.1
  * @since 15/08/2026
  */
 public class Metrics {
@@ -15,5 +15,6 @@ public class Metrics {
     public long memoryUsedBytes;
     public long recursiveCalls;
     public long solutionsFound;
+    public long podas; // adicoinando contagem de podas
     public int[] firstSolution; // Para desenhar o tabuleiro
 }

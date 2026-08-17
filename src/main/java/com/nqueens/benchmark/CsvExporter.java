@@ -39,7 +39,7 @@ public class CsvExporter {
 
             try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
                 // Cabeçalho padronizado para as planilhas
-                writer.println("N,Algoritmo,TempoMedio_ms,MemoriaMedia_KB,Chamadas_Recursivas,Podas,Solucoes");
+                writer.println("N;Algoritmo;TempoMedio_ms;MemoriaMedia_KB;Chamadas_Recursivas;Podas;Solucoes");
 
                 for (int n = minN; n <= maxN; n++) {
                     double totalTime = 0;
@@ -68,7 +68,7 @@ public class CsvExporter {
                         double avgTime = totalTime / count;
                         double avgMem = totalMem / count;
                         // não tem média das podas, chamadas e soluções, pois são constantes a cada execução
-                        writer.printf(java.util.Locale.US, "%d,%s,%.2f,%.2f,%d,%d,%d\n",
+                        writer.printf(new java.util.Locale("pt", "BR"), "%d;%s;%.2f;%.2f;%d;%d;%d\n",
                                 n, targetAlg, avgTime, avgMem, chamadas, podas, solucoes);
                     }
                 }

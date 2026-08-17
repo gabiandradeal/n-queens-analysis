@@ -1,6 +1,8 @@
 package com.nqueens.benchmark;
 
 import com.nqueens.core.Metrics;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,11 +16,19 @@ public class CsvExporter {
         // Pega a quantidade exata de rodadas (tentativas) executadas
         int tentativas = allRounds.size();
 
+        String diretorio = "resultados_csv/maquinaX";
+
+        // Cria a pasta no caso ela ainda não exista
+        File pasta = new File(diretorio);
+        if (!pasta.exists()) {
+            pasta.mkdirs();
+        }
+
         // Adiciona o número de tentativas dinamicamente no nome do arquivo
         String[] fileNames = {
-                "medias_Backtracking_" + tentativas + "_tentativas.csv",
-                "medias_BranchAndBound_" + tentativas + "_tentativas.csv",
-                "medias_Bitmask_" + tentativas + "_tentativas.csv"
+                diretorio + "/medias_Backtracking_" + tentativas + "_tentativas.csv",
+                diretorio + "/medias_BranchAndBound_" + tentativas + "_tentativas.csv",
+                diretorio + "/medias_Bitmask_" + tentativas + "_tentativas.csv"
         };
 
         System.out.println("\n📊 Calculando médias das " + tentativas + " rodadas e gerando CSVs...");
@@ -57,14 +67,14 @@ public class CsvExporter {
                     if (count > 0) {
                         double avgTime = totalTime / count;
                         double avgMem = totalMem / count;
-
+                        // não tem média das podas, chamadas e soluções, pois são constantes a cada execução
                         writer.printf(java.util.Locale.US, "%d,%s,%.2f,%.2f,%d,%d,%d\n",
                                 n, targetAlg, avgTime, avgMem, chamadas, podas, solucoes);
                     }
                 }
-                System.out.println("✅ Arquivo exportado com sucesso: " + filename);
+                System.out.println("Arquivo exportado com sucesso: " + filename);
             } catch (IOException e) {
-                System.err.println("❌ Erro ao exportar " + filename + ": " + e.getMessage());
+                System.err.println("Erro ao exportar " + filename + ": " + e.getMessage());
             }
         }
     }

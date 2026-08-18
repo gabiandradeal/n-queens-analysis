@@ -36,3 +36,11 @@ Abordagens definidas
 - Relatório técnico (PDF)
 - Dashboard/gráficos comparando as três abordagens (tempo, memória, etc.)
 - Interface simples, se der tempo
+
+## Como rodar
+
+1. Se estiver usando VSCode, rode isso no terminal para poder visualizar os emojis do projeto:
+
+   ```powershell
+   [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+   ```

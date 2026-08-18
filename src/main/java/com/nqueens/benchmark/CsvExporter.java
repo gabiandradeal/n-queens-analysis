@@ -16,7 +16,7 @@ public class CsvExporter {
         // Pega a quantidade exata de rodadas (tentativas) executadas
         int tentativas = allRounds.size();
 
-        String diretorio = "resultados_csv/maquinaX";
+        String diretorio = "resultados_csv/maquina3";
 
         // Cria a pasta no caso ela ainda não exista
         File pasta = new File(diretorio);

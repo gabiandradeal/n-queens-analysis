@@ -1,0 +1,12 @@
+N;Algoritmo;TempoMedio_ms;MemoriaMedia_KB;Chamadas_Recursivas;Podas;Solucoes
+4;Branch and Bound;0,02;33,15;13;32;2
+5;Branch and Bound;0,03;32,72;50;151;10
+6;Branch and Bound;0,05;32,72;107;512;4
+7;Branch and Bound;0,13;32,73;398;2109;40
+8;Branch and Bound;0,45;32,73;1413;9156;92
+9;Branch and Bound;1,88;32,73;5810;43313;352
+10;Branch and Bound;8,20;32,73;23489;204162;724
+11;Branch and Bound;32,59;32,74;108530;1055821;2680
+12;Branch and Bound;140,97;32,74;555659;5941850;14200
+13;Branch and Bound;710,50;32,75;3031950;35425145;73712
+14;Branch and Bound;3833,16;32,75;17693457;224896598;365596

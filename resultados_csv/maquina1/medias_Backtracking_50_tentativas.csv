@@ -1,0 +1,12 @@
+N;Algoritmo;TempoMedio_ms;MemoriaMedia_KB;Chamadas_Recursivas;Podas;Solucoes
+4;Backtracking Classico;0,02;32,06;17;44;2
+5;Backtracking Classico;0,03;32,72;54;167;10
+6;Backtracking Classico;0,06;32,72;153;742;4
+7;Backtracking Classico;0,14;32,73;552;3033;40
+8;Backtracking Classico;0,62;32,73;2057;13664;92
+9;Backtracking Classico;2,68;32,73;8394;63985;352
+10;Backtracking Classico;12,46;32,73;35539;312612;724
+11;Backtracking Classico;60,66;32,74;166926;1639781;2680
+12;Backtracking Classico;231,15;32,74;856189;9247680;14200
+13;Backtracking Classico;1110,28;33,40;4674890;55140425;73712
+14;Backtracking Classico;6704,94;32,75;27358553;350542846;365596

@@ -1,0 +1,14 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "PowerShell (UTF-8)": {
+            "source": "PowerShell",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $OutputEncoding = [System.Text.Encoding]::UTF8; chcp 65001 > $null"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell (UTF-8)",
+    "java.debug.settings.vmArgs": "-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -Dfile.encoding=UTF-8"
+}

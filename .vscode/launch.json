@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "N-Queens - Main",
+            "request": "launch",
+            "mainClass": "com.nqueens.Main",
+            "projectName": "n-queens-analysis",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -Dfile.encoding=UTF-8"
+        }
+    ]
+}

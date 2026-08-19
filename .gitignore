@@ -36,7 +36,8 @@ buildNumber.properties
 out/
 
 # VS CODE
-.vscode/
+# (.vscode/ nao esta ignorado de proposito: settings.json e launch.json
+# configuram UTF-8 automaticamente para todo mundo que abrir o projeto)
 
 # SISTEMAS OPERACIONAIS
 .DS_Store

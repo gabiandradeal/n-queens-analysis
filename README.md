@@ -39,3 +39,15 @@ Abordagens definidas
 
 ## Como rodar
 
+
+
+### Sobre emojis no terminal
+
+Se os emojis não funcionarem quando você clicar em Run Main.java, provavelmente é porque sua IDE não reconheceu o terminal padrão como PowerShell na versão UTF-8.
+
+O que fazer?
+
+1. Assim que clicar em run, vai abrir um terminal. Se, ao lado do título "PROJETO N QUEENS", você ver que no lugar que deveria ser um emoji está o símbolo "?", escolha a opção 0 (sair).
+2. Ainda nesse MESMO terminal, execute o seguinte comando: `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8`
+3. Depois, ainda com o mesmo terminal aberto, clique no botão para rodar (run) novamente.
+

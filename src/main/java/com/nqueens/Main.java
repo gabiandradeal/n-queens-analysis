@@ -131,9 +131,9 @@ public class Main {
 
                     long limiteNano = minutos * 60L * 1_000_000_000L;
                     int currentN = 4;
-                    boolean testing = true;
+                    boolean exit2 = false;
 
-                    while (testing) {
+                    while (!exit2) {
                         System.out.print("N = " + String.format("%-2d", currentN) + " ... ");
 
                         long start = System.nanoTime();

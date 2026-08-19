@@ -21,7 +21,7 @@ public class Board {
      */
     public static void printBoard(int[] board) {
         if (board == null) {
-            System.out.println("Nenhuma solução para exibir (ou algoritmo não coleta solução).");
+            System.out.println("\n⚠️ O algoritmo selecionado (Bitmask) não utiliza matrizes ou vetores físicos, por isso, nenhuma representação visual disponível");
             return;
         }
         int n = board.length;

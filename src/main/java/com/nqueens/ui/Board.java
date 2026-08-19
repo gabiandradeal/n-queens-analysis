@@ -15,16 +15,22 @@ public class Board {
      * solução informada, com uma rainha (👑) por linha e as demais casas
      * alternando entre claras (⬜) e escuras (⬛).
      *
-     * @param board array onde {@code board[i]} guarda a coluna ocupada pela
-     *              rainha da linha {@code i}, ou {@code null} caso não haja
-     *              solução para exibir
+     * @param board         array onde {@code board[i]} guarda a coluna ocupada
+     *                      pela rainha da linha {@code i}, ou {@code null}
+     *                      caso não haja solução para exibir
+     * @param algorithmName nome do algoritmo executado, usado para explicar o
+     *                      motivo de {@code board} ser {@code null}
+     * @param n             tamanho do tabuleiro usado na execução
      */
-    public static void printBoard(int[] board) {
+    public static void printBoard(int[] board, String algorithmName, int n) {
         if (board == null) {
-            System.out.println("\n⚠️ O algoritmo selecionado (Bitmask) não utiliza matrizes ou vetores físicos, por isso, nenhuma representação visual disponível");
+            if ("Bitmask".equals(algorithmName)) {
+                System.out.println("\n⚠️ O algoritmo selecionado (Bitmask) não utiliza matrizes ou vetores físicos, por isso, nenhuma representação visual disponível");
+            } else {
+                System.out.println("\n⚠️ Não existe solução para N = " + n + ", por isso, nenhuma representação visual disponível");
+            }
             return;
         }
-        int n = board.length;
         System.out.println("\nExibindo uma solução válida:\n");
         for (int r = 0; r < n; r++) {
             for (int c = 0; c < n; c++) {

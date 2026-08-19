@@ -1,4 +1,4 @@
-N;Algoritmo;TempoMedio_ms;MemoriaMedia_KB;  Chamadas_Recursivas;Podas;Solucoes
+N;Algoritmo;TempoMedio_ms;MemoriaMedia_KB;Chamadas_Recursivas;Podas;Solucoes
 4;Backtracking Classico;0,01;2,54;17;44;2
 5;Backtracking Classico;0,01;2,82;54;167;10
 6;Backtracking Classico;0,02;2,63;153;742;4

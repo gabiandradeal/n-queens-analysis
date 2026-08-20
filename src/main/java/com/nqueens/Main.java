@@ -69,7 +69,7 @@ public class Main {
                     System.out.println("Chamadas Recursivas (Estados): " + m.recursiveCalls);
                     System.out.println("Podas Realizadas: " + m.podas);
 
-                    Board.printBoard(m.firstSolution);
+                    Board.printBoard(m.firstSolution, m.algorithmName, n);
 
                 } else if (op == 2) {
                     System.out.print("Executar benchmark do N = 4 até N = (Máximo recomendado = 15): ");

@@ -9,7 +9,7 @@ Repositório dedicado ao estudo comparativo e análise experimental de algoritmo
 
 ### Pré Requisitos
 
-- Java JDK 17 (LTS) ou superior
+- Java JDK 21 (LTS) ou superior
 - IDE compatível (ex.: IntelliJ IDEA, Eclipse ou VS Code) ou uso do javac/java via terminal.
 - Sistema operacional com suporte a Java (Windows, Linux ou macOS).
 

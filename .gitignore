@@ -42,3 +42,6 @@ out/
 # SISTEMAS OPERACIONAIS
 .DS_Store
 Thumbs.db
+
+# SAÍDA DE TESTES DOS SCRIPTS DE REPRODUÇÃO (não são dados oficiais)
+resultados_csv/testes/

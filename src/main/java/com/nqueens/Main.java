@@ -20,6 +20,11 @@ import java.util.Locale;
 public class Main {
 
     public static void main(String[] args) {
+        if (args.length > 0) {
+            runBenchmarkNonInteractive(args);
+            return;
+        }
+
         Scanner sc = new Scanner(System.in);
         boolean exit = false;
 
@@ -69,7 +74,7 @@ public class Main {
                     System.out.println("Chamadas Recursivas (Estados): " + m.recursiveCalls);
                     System.out.println("Podas Realizadas: " + m.podas);
 
-                    Board.printBoard(m.firstSolution);
+                    Board.printBoard(m.firstSolution, m.algorithmName, n);
 
                 } else if (op == 2) {
                     System.out.print("Executar benchmark do N = 4 até N = (Máximo recomendado = 15): ");
@@ -178,5 +183,52 @@ public class Main {
             }
         }
         sc.close();
+    }
+
+    /**
+     * Reproduz a Opção 2 do menu (benchmark + exportação de CSVs de média)
+     * sem interação via terminal, para uso em scripts de reprodução dos
+     * experimentos.
+     * <p>
+     * Uso: {@code --minN N} (padrão 4), {@code --maxN N} (padrão 14),
+     * {@code --rounds N} (padrão 50), {@code --outDir DIR} (padrão
+     * {@code resultados_csv/testes}, para não misturar execuções de teste
+     * com os dados oficiais coletados nas máquinas do grupo).
+     */
+    private static void runBenchmarkNonInteractive(String[] args) {
+        int minN = 4;
+        int maxN = 14;
+        int rounds = 50;
+        String outDir = "resultados_csv/testes";
+
+        for (int i = 0; i < args.length; i++) {
+            switch (args[i]) {
+                case "--minN" -> minN = Integer.parseInt(args[++i]);
+                case "--maxN" -> maxN = Integer.parseInt(args[++i]);
+                case "--rounds" -> rounds = Integer.parseInt(args[++i]);
+                case "--outDir" -> outDir = args[++i];
+                default -> {
+                    System.err.println("Argumento desconhecido: " + args[i]);
+                    System.err.println("Uso: --minN <n> --maxN <n> --rounds <n> --outDir <pasta>");
+                    System.exit(1);
+                }
+            }
+        }
+
+        if (maxN >= 32 || minN < 4 || maxN < minN || rounds <= 0) {
+            System.err.println("Parâmetros inválidos (minN >= 4, maxN < 32, maxN >= minN, rounds > 0).");
+            System.exit(1);
+        }
+
+        List<List<com.nqueens.core.Metrics>> allRounds = new ArrayList<>();
+        for (int r = 1; r <= rounds; r++) {
+            System.out.println("\n<--------------------------------------------------------->");
+            System.out.println("⏳ EXECUTANDO RODADA " + r + " DE " + rounds + "...");
+            System.out.println("<---------------------------------------------------------->");
+
+            allRounds.add(BenchmarkRunner.run(minN, maxN));
+        }
+
+        CsvExporter.exportAverages(allRounds, minN, maxN, outDir);
     }
 }

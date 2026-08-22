@@ -39,6 +39,32 @@ Na raiz do projeto (onde está o arquivo `pom.xml`), rode o comando abaixo:
 
 ---
 
+## Reprodução dos Experimentos
+
+Além do menu interativo, o `Main.java` aceita argumentos de linha de comando para rodar o benchmark (Opção 2) sem interação, permitindo reproduzir os dados de `resultados_csv/` via script. Os scripts em `scripts/` já usam os parâmetros da metodologia descrita abaixo (N = 4 a 14, 50 rodadas):
+
+```bash
+# Linux/macOS
+./scripts/run-benchmark.sh
+
+# Windows (PowerShell)
+.\scripts\run-benchmark.ps1
+```
+
+Os parâmetros podem ser sobrescritos (`--minN`, `--maxN`, `--rounds`, `--outDir` no shell; `-MinN`, `-MaxN`, `-Rounds`, `-OutDir` no PowerShell), por exemplo para um teste rápido:
+
+```bash
+./scripts/run-benchmark.sh --maxN 8 --rounds 5
+```
+
+Por padrão, os CSVs de média são exportados em `resultados_csv/testes/` (pasta de rascunho, ignorada pelo git), para não misturar execuções de teste com os dados oficiais em `resultados_csv/maquinaX/`. Para gerar um lote "oficial" (ex.: rodando em uma nova máquina do grupo), aponte explicitamente para a pasta desejada:
+
+```bash
+./scripts/run-benchmark.sh --outDir resultados_csv/maquina5
+```
+
+---
+
 
 ## O Menu Interativo
 
@@ -79,6 +105,10 @@ n-queens-analysis
 │   ├── 📂 maquina2/  
 │   ├── 📂 maquina3/          
 │   └── 📂 maquina4/          
+│  
+├── 📂 scripts/                 # Scripts de reprodução dos experimentos (benchmark)
+│   ├── 🐚 run-benchmark.sh
+│   └── 🪟 run-benchmark.ps1
 │  
 ├── 📂 src/main/java/com/nqueens/
 │   ├── 📂 algorithms/          # Algoritmos Implementados
@@ -161,6 +191,7 @@ Para avaliar o comportamento da explosão combinatória em diferentes cenários,
 
 - Código-fonte (Java/Maven)
 - Geração e registro de lotes de teste comparando as três abordagens (tempo, memória, etc.)
+- Scripts para reprodução dos experimentos (`scripts/run-benchmark.sh` e `scripts/run-benchmark.ps1`)
 - Relatório técnico (PDF)
 
 ---

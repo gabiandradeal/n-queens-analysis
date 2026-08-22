@@ -11,12 +11,14 @@ import java.util.List;
 public class CsvExporter {
 
     public static void exportAverages(List<List<Metrics>> allRounds, int minN, int maxN) {
+        exportAverages(allRounds, minN, maxN, "resultados_csv");
+    }
+
+    public static void exportAverages(List<List<Metrics>> allRounds, int minN, int maxN, String diretorio) {
         String[] algos = {"Backtracking Classico", "Branch and Bound", "Bitmask"};
 
         // Pega a quantidade exata de rodadas (tentativas) executadas
         int tentativas = allRounds.size();
-
-        String diretorio = "resultados_csv";
 
         // Cria a pasta no caso ela ainda não exista
         File pasta = new File(diretorio);

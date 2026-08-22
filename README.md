@@ -18,7 +18,7 @@ Repositório dedicado ao estudo comparativo e análise experimental de algoritmo
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/gabiandradeal/n-quenns-analysis.git
+   git clone https://github.com/gabiandradeal/n-queens-analysis.git
     ```
    
 2. **Navegue até o diretório do projeto:**

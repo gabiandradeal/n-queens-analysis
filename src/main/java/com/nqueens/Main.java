@@ -139,6 +139,14 @@ public class Main {
                     boolean exit2 = false;
 
                     while (!exit2) {
+
+                        if (currentN >= 32) {
+                            System.out.println("-".repeat(80));
+                            System.out.println("Limite Atingido");
+                            System.out.println("O algoritmo atingiu o N = 31. O teste foi abortado para evitar um overflow silencioso de 32 bits no Java.");
+                            break;
+                        }
+
                         System.out.print("N = " + String.format("%-2d", currentN) + " ... ");
 
                         long start = System.nanoTime();

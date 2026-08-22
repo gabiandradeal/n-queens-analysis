@@ -8,8 +8,36 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+/**
+ * Utilitário responsável por consolidar e exportar os resultados dos benchmarks
+ * dos algoritmos do problema das N-Rainhas em formato CSV.
+ * 
+ * <p>Esta classe processa métricas coletadas em múltiplas rodadas de execução,
+ * calcula médias de tempo e consumo de memória, e gera arquivos tabulares
+ * separados para cada algoritmo avaliado.</p>
+ * 
+ * @author Seu Nome
+ * @version 1.0
+ * @since 1.0
+ */
 public class CsvExporter {
 
+    /**
+     * Calcula as médias das execuções e exporta os dados para arquivos CSV individuais por algoritmo.
+     *
+     * <p>Para cada algoritmo pré-definido (Backtracking Clássico, Branch and Bound, Bitmask) e para cada
+     * tamanho de tabuleiro {@code N} no intervalo fornecido:</p>
+     * <ul>
+     *   <li>Calcula a média de tempo de execução (convertido para milissegundos).</li>
+     *   <li>Calcula a média de memória utilizada (convertida para kilobytes).</li>
+     *   <li>Extrai contagens determinísticas (chamadas recursivas, podas e soluções encontradas).</li>
+     *   <li>Grava os dados no diretório {@code resultados_csv/} com formato numérico pt-BR (vírgula decimal).</li>
+     * </ul>
+     *
+     * @param allRounds Lista de rodadas de benchmark, onde cada item contém as métricas coletadas naquela rodada.
+     * @param minN      Tamanho mínimo do tabuleiro {@code N} a ser considerado na exportação.
+     * @param maxN      Tamanho máximo do tabuleiro {@code N} a ser considerado na exportação.
+     */
     public static void exportAverages(List<List<Metrics>> allRounds, int minN, int maxN) {
         exportAverages(allRounds, minN, maxN, "resultados_csv");
     }

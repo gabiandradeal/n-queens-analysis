@@ -10,6 +10,7 @@ Repositório dedicado ao estudo comparativo e análise experimental de algoritmo
 ### Pré Requisitos
 
 - Java JDK 21 (LTS) ou superior
+- Apache Maven instalado e configurado no PATH (necessário para o comando `mvn` do passo a passo abaixo; se usar uma IDE como IntelliJ ou Eclipse, o Maven embutido na IDE já é suficiente)
 - IDE compatível (ex.: IntelliJ IDEA, Eclipse ou VS Code) ou uso do javac/java via terminal.
 - Sistema operacional com suporte a Java (Windows, Linux ou macOS).
 

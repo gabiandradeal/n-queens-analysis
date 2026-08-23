@@ -32,7 +32,7 @@ Repositório dedicado ao estudo comparativo e análise experimental de algoritmo
 2. **Compile e execute em um único comando Maven:**
 Na raiz do projeto (onde está o arquivo `pom.xml`), rode o comando abaixo:
     ```bash
-    mvn clean compile exec:java -Dexec.mainClass="com.nqueens.Main"
+    mvn clean compile exec:java '-Dexec.mainClass=com.nqueens.Main'
     ```
 
 

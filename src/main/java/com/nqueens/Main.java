@@ -4,6 +4,8 @@ import com.nqueens.benchmark.*;
 import com.nqueens.ui.*;
 import com.nqueens.algorithms.*;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.List;
@@ -20,6 +22,11 @@ import java.util.Locale;
 public class Main {
 
     public static void main(String[] args) {
+        // Força UTF-8 na saída, pois o JVM no Windows usa a codificação do
+        // console (ex.: cp1252/cp437) por padrão, corrompendo acentos e emojis.
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        System.setErr(new PrintStream(System.err, true, StandardCharsets.UTF_8));
+
         if (args.length > 0) {
             runBenchmarkNonInteractive(args);
             return;

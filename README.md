@@ -104,7 +104,10 @@ Se os emojis não funcionarem quando você clicar em Run Main.java, provavelment
 ```text
 n-queens-analysis
 ├── 📂 .vscode/                 # Configurações de ambiente para emojis (UTF-8)
-├── 📂 assets/                  # Imagens utilizadas no README
+├── 📂 assets/                  # Imagens e documentação oficial
+│   ├── 🖼️ 8-queens.png
+│   ├── 🖼️ menu-terminal.png
+│   └── 📄 Relatório_TAAL.pdf   # Relatório com a análise teórica e discussão
 │   
 ├── 📂 resultados_csv/          # Diretório de saída dos benchmarks
 │   ├── 📂 maquina1/            
@@ -131,9 +134,10 @@ n-queens-analysis
 │   │   └── ☕ Board.java
 │   └── ☕ Main.java              
 │
+├── 📄 .gitattributes           # Força compatibilidade de scripts (LF) entre Windows/Linux
 ├── 📄 .gitignore               
 ├── 📄 pom.xml                   
-└── 📄 README.md                
+└── 📄 README.md       
 
 ```
 
@@ -176,7 +180,7 @@ Para garantir a validade estatística e isolar variações do sistema operaciona
 * O tamanho do tabuleiro variou do **N = 4 ao N = 14** (limite viável em tempo hábil para o Backtracking Clássico).
 * Os dados das planilhas representam a **média aritmética** dessas 50 execuções.
 
-A **discussão completa**, análise de complexidade, provas de corretude e os gráficos comparativos de desempenho detalhados encontram-se no documento `Relatório_TAAL.pdf`.
+A **discussão completa**, análise de complexidade, provas de corretude e os gráficos comparativos de desempenho detalhados encontram-se no documento [Relatório_TAAL.pdf](assets/Relatório_TAAL.pdf).
 
 
 

@@ -16,7 +16,7 @@ import java.util.List;
  * calcula médias de tempo e consumo de memória, e gera arquivos tabulares
  * separados para cada algoritmo avaliado.</p>
  * 
- * @author Seu Nome
+ * @author Horlan
  * @version 1.0
  * @since 1.0
  */

@@ -13,6 +13,7 @@ Repositório dedicado ao estudo comparativo e análise experimental de algoritmo
 - Apache Maven instalado e configurado no PATH (necessário para o comando `mvn` do passo a passo abaixo; se usar uma IDE como IntelliJ ou Eclipse, o Maven embutido na IDE já é suficiente)
 - IDE compatível (ex.: IntelliJ IDEA, Eclipse ou VS Code) ou uso do javac/java via terminal.
 - Sistema operacional com suporte a Java (Windows, Linux ou macOS).
+- Conexão com a internet na primeira execução: o `exec-maven-plugin` (usado para rodar `exec:java`) não vem baixado por padrão, então o Maven precisa buscá-lo (e outras dependências) no repositório remoto na primeira vez.
 
 
 ### Passo a passo:
@@ -63,6 +64,10 @@ Por padrão, os CSVs de média são exportados em `resultados_csv/testes/` (past
 ```bash
 ./scripts/run-benchmark.sh --outDir resultados_csv/maquina5
 ```
+
+> **Problemas para rodar os scripts?**
+> - **Linux/macOS:** se aparecer "Permission denied", dê permissão de execução primeiro: `chmod +x scripts/run-benchmark.sh`.
+> - **Windows (PowerShell):** se aparecer um erro dizendo que "a execução de scripts foi desabilitada neste sistema", a política de execução do PowerShell está bloqueando o `.ps1`. Rode uma vez (nesse mesmo terminal): `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` e tente novamente.
 
 ---
 
